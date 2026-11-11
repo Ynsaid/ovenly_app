@@ -1,10 +1,4 @@
-//import androidx.compose.animation.core.LinearEasing
-//import androidx.compose.animation.core.RepeatMode
-//import androidx.compose.animation.core.animateFloat
-//import androidx.compose.animation.core.infiniteRepeatable
-//import androidx.compose.animation.core.rememberInfiniteTransition
-//import androidx.compose.animation.core.tween
-//import androidx.compose.foundation.Canvas
+
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -38,8 +32,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.graphics.Color
-//import androidx.compose.ui.graphics.StrokeCap
-//import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -55,6 +47,7 @@ import com.example.ovenlyapp.ui.theme.Bg_Color_Primary
 import com.example.ovenlyapp.ui.theme.Bg_color_Second
 import com.example.ovenlyapp.ui.theme.Sub_Text_Color
 import kotlinx.coroutines.delay
+import kotlin.time.Duration.Companion.milliseconds
 
 @Composable
 fun ConfirmNumberScreen(navController : NavHostController) {
@@ -173,7 +166,7 @@ fun ConfirmNumberScreen(navController : NavHostController) {
     // darker bg when we are in the last input
     if(showLoading){
         LaunchedEffect(Unit) {
-            delay(3000)
+            delay(3000.milliseconds)
             navController.navigate(Route.Main)
         }
         Box(
@@ -198,7 +191,7 @@ fun AnimatedCircularProgress() {
 
     LaunchedEffect(Unit) {
         while (progress < 1f) {
-            delay(50)
+            delay(50.milliseconds)
             progress += 0.01f
         }
     }

@@ -1,3 +1,5 @@
+package com.example.ovenlyapp.screens
+
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -362,7 +364,7 @@ fun DetailsScreen(modifier: Modifier = Modifier) {
 @Composable
 fun ReadText(text: String) {
     var expanded by remember { mutableStateOf(false) }
-    var textWeight = if (text.length > 100) text.take(100) + "..." else text
+    val textWeight = if (text.length > 100) text.take(100) + "..." else text
 
     Column {
         Text(
