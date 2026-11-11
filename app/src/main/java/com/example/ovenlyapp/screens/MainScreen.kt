@@ -1,3 +1,5 @@
+package com.example.ovenlyapp.screens
+
 import androidx.annotation.DrawableRes
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.animateFloat
@@ -25,7 +27,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -48,7 +50,7 @@ import com.example.ovenlyapp.Route
 @Composable
 fun MainScreen() {
     val innerNavController = rememberNavController()
-    var selectedIndex by remember { mutableStateOf(0) }
+    var selectedIndex by remember { mutableIntStateOf(0) }
     val navController = rememberNavController()
     val navItems = listOf(
         Route.Home,
@@ -153,7 +155,7 @@ fun MainScreen() {
 
 sealed class BottomNavItem {
     data class VectorIcon(val icon: ImageVector) : BottomNavItem()
-    data class DrawableIcon(@DrawableRes val resId: Int) : BottomNavItem()
+    data class DrawableIcon(@param:DrawableRes val resId: Int) : BottomNavItem()
 }
 @Composable
 fun FloatingBottomBar(
@@ -225,8 +227,6 @@ fun FloatingBottomBar(
                                 modifier = Modifier.size(if (index == selectedIndex) 20.dp else 24.dp)
                             )
                         }
-
-                        else -> {}
                     }
                 }
             }

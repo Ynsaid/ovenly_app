@@ -2,11 +2,11 @@ package com.example.ovenlyapp
 
 import ConfirmNumberScreen
 import com.example.ovenlyapp.screens.DetailsScreen
-import MainScreen
-import SettingsScreen
-import SignUpScreen
-import SplashScreen
-import StartScreen
+import com.example.ovenlyapp.screens.MainScreen
+import com.example.ovenlyapp.screens.SettingsScreen
+import com.example.ovenlyapp.screens.SignUpScreen
+import com.example.ovenlyapp.screens.SplashScreen
+import com.example.ovenlyapp.screens.StartScreen
 import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.activity.ComponentActivity

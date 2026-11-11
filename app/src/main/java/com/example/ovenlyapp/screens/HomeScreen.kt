@@ -1,3 +1,5 @@
+package com.example.ovenlyapp.screens
+
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -26,6 +28,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -53,7 +56,7 @@ import com.example.ovenlyapp.ui.theme.White
 @Composable
 fun HomeScreen(navController: NavHostController) {
     var searchText by remember { mutableStateOf("") }
-    var selectedIndex by remember { mutableStateOf(0) }
+    var selectedIndex by remember { mutableIntStateOf(0) }
     /* ------- logic -------
     * Head of the screen :: Location and profile
     * Search input with filter icon
@@ -351,7 +354,7 @@ fun CategoryBtn(
 @Composable
 fun PizzaCard(pizzaName: String ,navController: NavHostController) {
     // mutablestate<boolean> is not boolean
-    var isFavorite = remember { mutableStateOf(false) }
+    val isFavorite = remember { mutableStateOf(false) }
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -373,9 +376,7 @@ fun PizzaCard(pizzaName: String ,navController: NavHostController) {
                 modifier = Modifier
                     .size(128.dp)
             )
-            Column(
-
-            ){
+            Column{
                 // First row :: pizza name and favorite icon
                 Row(
                     modifier = Modifier.fillMaxWidth()
@@ -453,7 +454,7 @@ fun PizzaCard(pizzaName: String ,navController: NavHostController) {
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ){
-                    Row(){
+                    Row{
                         Text(
                             text = "$10.00",
                             color = Black,

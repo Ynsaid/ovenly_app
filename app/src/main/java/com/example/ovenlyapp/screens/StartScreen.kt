@@ -1,3 +1,5 @@
+package com.example.ovenlyapp.screens
+
 import androidx.compose.runtime.Composable
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -76,7 +78,7 @@ fun StartScreen( navController: NavController) {
             horizontalArrangement = Arrangement.SpaceBetween // Spread logo and dropdown
         ) {
             // Logo + App name
-            Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
                 Image(
                     painter = painterResource(id = R.drawable.logo),
                     contentDescription = "Logo",
@@ -99,7 +101,7 @@ fun StartScreen( navController: NavController) {
                         .clip(RoundedCornerShape(16.dp))
                         .background(Sub_Text_Color.copy(alpha = 0.1f))
                     ,
-                    verticalAlignment = androidx.compose.ui.Alignment.CenterVertically
+                    verticalAlignment = Alignment.CenterVertically
                 ) {
                     Image(
                         painter = painterResource(id = R.drawable.arrow_down_icon), // replace with your flag icon
@@ -117,7 +119,7 @@ fun StartScreen( navController: NavController) {
                 ) {
                     DropdownMenuItem(
                         text = {
-                            Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+                            Row(verticalAlignment = Alignment.CenterVertically) {
                                 Image(
                                     painter = painterResource(id = R.drawable.arrow_down_icon),
                                     contentDescription = "EN",
@@ -133,7 +135,7 @@ fun StartScreen( navController: NavController) {
                     )
                     DropdownMenuItem(
                         text = {
-                            Row(verticalAlignment = androidx.compose.ui.Alignment.CenterVertically) {
+                            Row(verticalAlignment = Alignment.CenterVertically) {
                                 Image(
                                     painter = painterResource(id = R.drawable.arrow_down_icon),
                                     contentDescription = "FR",
